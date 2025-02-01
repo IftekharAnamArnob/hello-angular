@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-4">
+        One way from .ts to html
+    </div>
+    <div class="col-4">
+        
+    </div>
+    <div class="col-4">
+        
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-4 bg-success">
+                interpolation
+            <h4>{{courseName}}</h4> 
+            <div>{{inputType}}</div>
+            <input type="text" placeholder="{{courseName}}">
+            <input type="{{inputType}}" >
+            </div>
+         <div class="col-4">
+            Poperty binding
+            <input [type]="inputType">
+            <input [value]="courseName">
+         </div>
+        </div>
+        
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success" (click)="handleClick('Hi welcome')">Show Welcome</button>
+    </div>
+    <div class="col-4">
+        <input type="text" [(ngModel)]="courseName" />
+
+        
+    </div>
+    
+</div>
