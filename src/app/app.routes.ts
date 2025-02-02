@@ -8,6 +8,7 @@ import { PostApiComponent } from './components/post-api/post-api.component';
 import { CombineLatestComponent } from './components/combine-latest/combine-latest.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { NgTemplateComponent } from './components/ng-template/ng-template.component';
+import { NgContainerComponent } from './components/ng-container/ng-container.component';
 
 
 export const routes: Routes = [
@@ -47,6 +48,10 @@ export const routes: Routes = [
     {
         path: "ng-template",
         component: NgTemplateComponent
+    },
+    {
+        path:"ng container",
+        component: NgContainerComponent
     }
 
 

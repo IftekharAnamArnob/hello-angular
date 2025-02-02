@@ -1,0 +1,96 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>ng-container</h1>
+</div>
+<div class="row">
+   <div class="col-4">
+
+    <ng-container *ngIf="isContainer">
+        <p>Hello container</p>
+    </ng-container>
+
+   </div>
+
+   
+
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>SL No</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+         <tbody>
+
+            <ng-container *ngIf="!isAPI">
+                <tr *ngFor="let user of userList; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+             </tr>
+            </ng-container>
+
+            <ng-container *ngIf="isAPI">
+                <tr>
+                    <td colspan="4">
+                        <div class="spinner-grow text-primary" role="status">
+                           
+                          </div>
+                          <div class="spinner-grow text-secondary" role="status">
+                            
+                          </div>
+                          <div class="spinner-grow text-success" role="status">
+                            
+                          </div>
+                          <div class="spinner-grow text-danger" role="status">
+                           
+                          </div>
+                          <div class="spinner-grow text-warning" role="status">
+                            
+                          </div>
+                          <div class="spinner-grow text-info" role="status">
+                            
+                          </div>
+                          <div class="spinner-grow text-light" role="status">
+                           
+                          </div>
+                          <div class="spinner-grow text-dark" role="status">
+                           
+                          </div>
+                    </td>
+                </tr> 
+
+            </ng-container>
+           
+            
+         </tbody>
+
+
+
+        </table>
+
+    </div>
+    
+
+    <div class="col-4">
+        <button class="btn btn-success" (click)="getUsers()">Get Users</button>
+
+    </div>
+
+    <div class="col-4">
+       <ng-container *ngTemplateOutlet="myTemp">
+        
+       </ng-container>
+
+    </div>
+
+
+    </div>
+
+    <ng-template #myTemp>
+        <p>Hi I am from ngTemplate</p>
+
+    </ng-template> 
