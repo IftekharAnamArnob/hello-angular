@@ -9,50 +9,66 @@ import { CombineLatestComponent } from './components/combine-latest/combine-late
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { NgTemplateComponent } from './components/ng-template/ng-template.component';
 import { NgContainerComponent } from './components/ng-container/ng-container.component';
-
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
    
+    //default routing
     {
-        path: "app-data-binding",
-        component: DataBindingComponent
+        path: '',
+        redirectTo: "login",
+        pathMatch: "full"
     },
     {
-        path: "add-employee",
-        component:AddEmployeeComponent
+        path: "login",
+        component: LoginComponent
     },
-    {
-        path: "employee-list",
-        component: EmployeeListComponent
-    },
-    {
-        path:"reactive-forms",
-        component:ReactiveFormsComponent
-    },
-    {
-        path:"get-api",
-        component: GetApiComponent
-    },
-    {
-        path:"post-api",
-        component: PostApiComponent
-    },
-    {
-        path: "CombineLatest",
-        component: CombineLatestComponent
-    },
-    {
-        path: "reactive-form",
-        component: ReactiveFormComponent
-    },
-    {
-        path: "ng-template",
-        component: NgTemplateComponent
-    },
-    {
-        path:"ng container",
-        component: NgContainerComponent
-    }
 
-
+     {
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: "app-data-binding",
+                component: DataBindingComponent
+            },
+            {
+                path: "add-employee",
+                component:AddEmployeeComponent
+            },
+            {
+                path: "employee-list",
+                component: EmployeeListComponent
+            },
+            {
+                path:"reactive-forms",
+                component:ReactiveFormsComponent
+            },
+            {
+                path:"get-api",
+                component: GetApiComponent
+            },
+            {
+                path:"post-api",
+                component: PostApiComponent
+            },
+            {
+                path: "CombineLatest",
+                component: CombineLatestComponent
+            },
+            {
+                path: "reactive-form",
+                component: ReactiveFormComponent
+            },
+            {
+                path: "ng-template",
+                component: NgTemplateComponent
+            },
+            {
+                path:"ng-container",
+                component: NgContainerComponent
+            }
+        ]
+     }
 ];
