@@ -4,13 +4,13 @@
             <h2>Sign In</h2>
             <form>
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" [(ngModel)]="userObj.userName" id="userName" name="userName" placeholder="Username">
+                    <label for="username">Email</label>
+                    <input type="text" [(ngModel)]="userObj.EmailId" id="userName" name="EmailId" placeholder="Username">
                   
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" [(ngModel)]="userObj.password" id="password" name="password" placeholder="Password">
+                    <input type="password" [(ngModel)]="userObj.Password" id="password" name="Password" placeholder="Password">
                   
                 </div>
                 <button type="button" (click)="onLogin()">Sign In</button>

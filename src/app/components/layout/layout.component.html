@@ -45,7 +45,9 @@
         <a class="nav-link" routerLink="CombineLatest">CombineLatest</a>
       </li>
     </ul>
+
     <form class="d-flex">
+        <span class="me-3">{{loggedUserData.emailId}}</span>
       <button class="btn btn-primary" type="button" (click)="onLogOff()">LogOff</button>
     </form>
   </div>

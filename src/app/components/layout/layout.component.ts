@@ -13,6 +13,15 @@ export class LayoutComponent {
   
   router = inject(Router);
 
+  loggedUserData: any;
+   
+   constructor(){
+     const userData = localStorage.getItem("user");
+     if(userData!=null){
+       this.loggedUserData = JSON.parse(userData);
+     }
+   }
+
    onLogOff(){
      localStorage.removeItem("user");
      this.router.navigateByUrl('login');
