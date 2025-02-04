@@ -11,6 +11,7 @@ import { NgTemplateComponent } from './components/ng-template/ng-template.compon
 import { NgContainerComponent } from './components/ng-container/ng-container.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './service/auth.guard';
 
 export const routes: Routes = [
    
@@ -31,7 +32,8 @@ export const routes: Routes = [
         children: [
             {
                 path: "app-data-binding",
-                component: DataBindingComponent
+                component: DataBindingComponent,
+                canActivate: [authGuard]
             },
             {
                 path: "add-employee",
